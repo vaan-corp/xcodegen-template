@@ -1,4 +1,4 @@
-name: Haafidh
+name: XcodeGenTemplate
 
 # Configs
 
@@ -16,7 +16,7 @@ options:
   deploymentTarget:
     # macOS: 12.0
     iOS: 14.0
-  bundleIdPrefix: com.imthath
+  bundleIdPrefix: com.skydevz
   
 # Attributes
 
@@ -24,18 +24,8 @@ attributes:
   ORGANIZATIONNAME: SkyDevz
 
 packages:
-  QuranEngine:
-    url: https://github.com/quran/quran-ios
-    from: 2.0.0
-    # path: ../../OpenSource/quran-ios
-  MINetworkKit:
-    path: ../../Frameworks/MINetworkKit
   MILocalStore:
     path: ../../Frameworks/MILocalStore
-  IconStore:
-    path: ../../Frameworks/IconStore
-  QuranKit:
-    path: ../../Frameworks/QuranKit
   Mixpanel:
     url: https://github.com/mixpanel/mixpanel-swift
     from: 3.1.13
@@ -64,16 +54,13 @@ targets:
     #   - UnitTests
     postCompileScripts:
       - name: SwiftLint
-        script: |
-                swiftlint --config .swiftlint.yml
+        script: ./lint.sh
     dependencies:
-      - package: QuranEngine
-      - package: QuranKit
       - package: MILocalStore
-      - package: IconStore
       - package: Mixpanel
       - package: Purchases
       - package: SwiftUI-Shimmer
+        product: Shimmer
       
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)

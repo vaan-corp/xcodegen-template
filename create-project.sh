@@ -1,4 +1,4 @@
-APP_NAME="Haafidh"
+APP_NAME="XcodeGenTemplate"
 
 echo "☠️  Killing Xcode..."
 killall Xcode 2>/dev/null
