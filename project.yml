@@ -1,4 +1,4 @@
-name: XcodeGenTemplate
+name: ColorPalette
 
 # Configs
 
@@ -38,7 +38,7 @@ attributes:
 # Targets
 
 targets:
-  macOS-Template:
+  Color Palette:
     type: application
     platform: macOS
     sources: 
@@ -67,7 +67,7 @@ targets:
     configs:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)-$(SCHEME_NAME)
-        PRODUCT_NAME: $(APP_NAME)-$(SCHEME_NAME)
+        PRODUCT_NAME: $(APP_NAME)
         # DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
         INFOPLIST_FILE: Main/macOS/Info.plist
       # Debug:
