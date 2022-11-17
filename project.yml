@@ -3,9 +3,9 @@ name: XcodeGenTemplate
 # Configs
 
 configs:
-  Debug: debug
+  # Debug: debug
   Release: release
-  Internal: internal
+  # Internal: internal
 
 # Options
 
@@ -14,8 +14,8 @@ options:
   indentWidth: 2
   tabWidth: 2
   deploymentTarget:
-    # macOS: 12.0
-    iOS: 14.0
+    macOS: 12.0
+    # iOS: 14.0
   bundleIdPrefix: com.skydevz
   
 # Attributes
@@ -23,44 +23,44 @@ options:
 attributes:
   ORGANIZATIONNAME: SkyDevz
 
-packages:
-  MILocalStore:
-    path: ../../Frameworks/MILocalStore
-  Mixpanel:
-    url: https://github.com/mixpanel/mixpanel-swift
-    from: 3.1.13
-  Purchases:
-    url: https://github.com/RevenueCat/purchases-ios
-    from: 3.14.0
-  SwiftUI-Shimmer:
-    url: https://github.com/markiv/SwiftUI-Shimmer
-    from: 1.0.1
+# packages:
+#   MILocalStore:
+#     path: ../../Frameworks/MILocalStore
+#   Mixpanel:
+#     url: https://github.com/mixpanel/mixpanel-swift
+#     from: 3.1.13
+#   Purchases:
+#     url: https://github.com/RevenueCat/purchases-ios
+#     from: 3.14.0
+#   SwiftUI-Shimmer:
+#     url: https://github.com/markiv/SwiftUI-Shimmer
+#     from: 1.0.1
 # Targets
 
 targets:
-  iOS:
+  macOS:
     type: application
-    platform: iOS
+    platform: macOS
     sources: 
-      - path: Main/Shared
-      - path: Main/Resources
-      - path: Main/iOS
+      # - path: Main/Shared
+      # - path: Main/Resources
+      - path: Main/macOS
     configFiles:
-      Debug: Configs/Debug.xcconfig
+      # Debug: Configs/Debug.xcconfig
       Release: Configs/Release.xcconfig
-      Internal: Configs/Internal.xcconfig
+      # Internal: Configs/Internal.xcconfig
     # scheme:
     #   testTargets:
     #   - UnitTests
-    postCompileScripts:
-      - name: SwiftLint
-        script: ./lint.sh
-    dependencies:
-      - package: MILocalStore
-      - package: Mixpanel
-      - package: Purchases
-      - package: SwiftUI-Shimmer
-        product: Shimmer
+    # postCompileScripts:
+    #   - name: SwiftLint
+    #     script: ./lint.sh
+    # dependencies:
+    #   - package: MILocalStore
+    #   - package: Mixpanel
+    #   - package: Purchases
+    #   - package: SwiftUI-Shimmer
+    #     product: Shimmer
       
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
@@ -68,8 +68,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
         PRODUCT_NAME: $(APP_NAME)$(SCHEME_NAME)
-        DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
-        INFOPLIST_FILE: Main/iOS/Info.plist
+        # DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
+        INFOPLIST_FILE: Main/macOS/Info.plist
       # Debug:
       #   CODE_SIGN_STYLE: Automatic
       #   CODE_SIGN_IDENTITY: "Apple Development"
