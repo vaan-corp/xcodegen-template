@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    Text("Xcodegen Working")
-      .padding()
-      .frame(width: 500, height: 500)
+    ThemeView()
   }
 }
 
