@@ -23,11 +23,13 @@ opt_in_rules:
   - fatal_error_message
   - overridden_super_call
   - sorted_imports
-  - unused_declaration
-  - unused_import
   - vertical_whitespace_closing_braces
   - vertical_whitespace_opening_braces
   - yoda_condition
+
+analyzer_rules:
+  - unused_declaration
+  - unused_import
 
 trailing_comma:
   mandatory_comma: true

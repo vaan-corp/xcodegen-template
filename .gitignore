@@ -2,3 +2,4 @@
 *.xcodeproj  
 *.xcworkspace
 .idea
+.DS_Store

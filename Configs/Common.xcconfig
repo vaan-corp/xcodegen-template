@@ -2,9 +2,9 @@
 
 DEVELOPMENT_TEAM = 67T577V5Q4
 
-APP_NAME = Haafidh
-BUNDLE_ID_PREFIX = com.imthath
-URL_SCHEME_PREFIX = haafidh
+APP_NAME = Template
+BUNDLE_ID_PREFIX = com.skydevz.template.
+URL_SCHEME_PREFIX = template
 
 APP_VERSION = 1.2
 
