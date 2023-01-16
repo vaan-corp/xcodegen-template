@@ -23,20 +23,6 @@ options:
 attributes:
   ORGANIZATIONNAME: SkyDevz
 
-#packages:
-#  MILocalStore:
-#    path: ../../Frameworks/MILocalStore
-#  Mixpanel:
-#    url: https://github.com/mixpanel/mixpanel-swift
-#    from: 3.1.13
-#  Purchases:
-#    url: https://github.com/RevenueCat/purchases-ios
-#    from: 3.14.0
-#  SwiftUI-Shimmer:
-#    url: https://github.com/markiv/SwiftUI-Shimmer
-#    from: 1.0.1
-# Targets
-
 targets:
   Template:
     type: application
@@ -55,12 +41,6 @@ targets:
     postCompileScripts:
       - name: SwiftLint
         script: ./lint.sh
-#    dependencies:
-#      - package: MILocalStore
-#      - package: Mixpanel
-#      - package: Purchases
-#      - package: SwiftUI-Shimmer
-#        product: Shimmer
       
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
