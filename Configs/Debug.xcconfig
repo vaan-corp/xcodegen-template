@@ -2,4 +2,4 @@
 
 #include "Common.xcconfig"
 
-SCHEME_NAME = Debug
+SCHEME_NAME = debug
