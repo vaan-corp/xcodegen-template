@@ -15,7 +15,7 @@ options:
   tabWidth: 2
   deploymentTarget:
     # macOS: 12.0
-    iOS: 14.0
+    iOS: 15.0
   bundleIdPrefix: com.skydevz.template.
   
 # Attributes
