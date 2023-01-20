@@ -14,7 +14,7 @@ options:
   indentWidth: 2
   tabWidth: 2
   deploymentTarget:
-    # macOS: 12.0
+    macOS: 11.0
     iOS: 15.0
   bundleIdPrefix: com.skydevz.template.
   
@@ -24,12 +24,31 @@ attributes:
   ORGANIZATIONNAME: SkyDevz
 
 targets:
+  TemplateMac:
+    type: application
+    platform: macOS
+    sources:
+     - path: Main/Shared
+     - path: macOS
+    configFiles:
+      Release: Configs/Release.xcconfig
+    postCompileScripts:
+      - name: SwiftLint
+        script: ./lint.sh
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
+        PRODUCT_NAME: $(APP_NAME)
+        DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
+        INFOPLIST_FILE: Main/iOS/Info.plist
+      Release:
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Distribution"
   Template:
     type: application
     platform: iOS
     sources: 
       - path: Main/Shared
-      - path: Main/Resources
       - path: Main/iOS
     configFiles:
 #      Debug: Configs/Debug.xcconfig
@@ -41,13 +60,10 @@ targets:
     postCompileScripts:
       - name: SwiftLint
         script: ./lint.sh
-      
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
-    configs:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX)$(SCHEME_NAME)
-        PRODUCT_NAME: $(APP_NAME)$(SCHEME_NAME)
+        PRODUCT_NAME: $(APP_NAME)
         DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
         INFOPLIST_FILE: Main/iOS/Info.plist
       # Debug:
@@ -56,9 +72,9 @@ targets:
       # Internal:
       #   CODE_SIGN_STYLE: Automatic
       #   CODE_SIGN_IDENTITY: "Apple Distribution"
-      # Release:
-      #   CODE_SIGN_STYLE: Automatic
-      #   CODE_SIGN_IDENTITY: "Apple Distribution"
+      Release:
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Distribution"
       
   # UnitTests:
   #   type: bundle.unit-test
