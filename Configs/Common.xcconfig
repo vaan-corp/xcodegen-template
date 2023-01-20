@@ -1,6 +1,6 @@
 // Copyright © 2020 SkyDevz. All rights reserved.
 
-DEVELOPMENT_TEAM = 67T577V5Q4
+DEVELOPMENT_TEAM = 1234XXXX9 // REPLACE YOUR TEAM'S ID
 
 APP_NAME = Template
 BUNDLE_ID_PREFIX = com.skydevz.template.
