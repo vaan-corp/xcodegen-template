@@ -1,13 +1,7 @@
 name: Template
 
-# Configs
-
 configs:
-#  Debug: debug
-#  Internal: internal
   Release: release
-
-# Options
 
 options:
   usesTabs: false
@@ -16,9 +10,7 @@ options:
   deploymentTarget:
     macOS: 11.0
     iOS: 15.0
-  bundleIdPrefix: com.skydevz.template.
-  
-# Attributes
+  bundleIdPrefix: com.imthath.template.
 
 attributes:
   ORGANIZATIONNAME: SkyDevz
@@ -51,12 +43,7 @@ targets:
       - path: Shared
       - path: iOS
     configFiles:
-#      Debug: Configs/Debug.xcconfig
-#      Internal: Configs/Internal.xcconfig
       Release: Configs/Release.xcconfig
-    # scheme:
-    #   testTargets:
-    #   - UnitTests
     postCompileScripts:
       - name: SwiftLint
         script: ./lint.sh
@@ -66,18 +53,6 @@ targets:
         PRODUCT_NAME: $(APP_NAME)
         DEVELOPMENT_TEAM: $(DEVELOPMENT_TEAM)
         INFOPLIST_FILE: Main/iOS/Info.plist
-      # Debug:
-      #   CODE_SIGN_STYLE: Automatic
-      #   CODE_SIGN_IDENTITY: "Apple Development"
-      # Internal:
-      #   CODE_SIGN_STYLE: Automatic
-      #   CODE_SIGN_IDENTITY: "Apple Distribution"
       Release:
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "Apple Distribution"
-      
-  # UnitTests:
-  #   type: bundle.unit-test
-  #   platform: iOS
-  #   sources:
-  #     - path: Main/Tests
