@@ -28,7 +28,7 @@ targets:
     type: application
     platform: macOS
     sources:
-     - path: Main/Shared
+     - path: Shared
      - path: macOS
     configFiles:
       Release: Configs/Release.xcconfig
@@ -48,8 +48,8 @@ targets:
     type: application
     platform: iOS
     sources: 
-      - path: Main/Shared
-      - path: Main/iOS
+      - path: Shared
+      - path: iOS
     configFiles:
 #      Debug: Configs/Debug.xcconfig
 #      Internal: Configs/Internal.xcconfig
