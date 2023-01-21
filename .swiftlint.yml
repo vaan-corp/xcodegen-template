@@ -1,8 +1,10 @@
 included:
-  - Main
+  - iOS
+  - macOS
+  - Shared
 
 excluded:
-  - Main/Resources
+  - Resources
 
 indentation: 2
 

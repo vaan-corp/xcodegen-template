@@ -9,7 +9,6 @@
 import Cocoa
 import SwiftUI
 
-@main
 class AppDelegate: NSObject, NSApplicationDelegate {
   var window: NSWindow!
 
@@ -23,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     window.center()
     window.setFrameAutosaveName("Main Window")
 
-    window.contentViewController = NSHostingController(rootView: ContentView())
+    window.contentViewController = NSHostingController(rootView: ContentView().frame(width: 800, height: 450))
     window.makeKeyAndOrderFront(nil)
     window.setFrame(NSRect(x: 0, y: 0, width: 1600, height: 900), display: true)
   }
