@@ -56,3 +56,10 @@ targets:
       Release:
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "Apple Distribution"
+  SampleWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget:
+      iOS: 15.0
+    sources:
+      - SampleWidget
